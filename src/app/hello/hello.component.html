@@ -1,0 +1,15 @@
+<h1>Hello works!</h1>
+<h1>Witaj, {{ nazwa }}. Stan licznika: {{ counter}} </h1>
+<input type="text" [(ngModel)]="nazwa">
+
+<button (click)="incrementCounter()">+</button>
+<button (click)="decrementCounter()">-</button>
+
+<ul>
+    <li *ngFor="let item of items">
+        {{ item.id }} - {{ item.name }}
+        <button (click)="deleteItem(item.id)">X</button>
+    </li>
+</ul>
+<input type="text" [(ngModel)]="todoItem">
+<button (click)="addItem()">Dodaj</button>
