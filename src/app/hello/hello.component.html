@@ -11,5 +11,10 @@
         <button (click)="deleteItem(item.id)">X</button>
     </li>
 </ul>
-<input type="text" [(ngModel)]="todoItem">
+<label for="addEl">Podaj czynność do wykonania:</label>
+<input name='addEl' type="text" [(ngModel)]="todoItem">
 <button (click)="addItem()">Dodaj</button>
+<!-- #2 solution -->
+<div id="error" *ngIf="errorBoolean">
+    Element już istnieje!!
+</div>
