@@ -2,6 +2,10 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.0.
 
+##
+current state - 100% finished with additional features implemented
+only downside is how the dates are displayed - they look too americanish, to be fixed lol
+
 ## Tasks required to be implemented:
 1. Utwórz nowy komponent, który będzie wypisywał na ekranie nagłówek (np.
 Witaj na mojej stronie). Wyświetl przykładowe pole z klasy komponentu

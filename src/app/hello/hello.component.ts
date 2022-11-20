@@ -1,6 +1,5 @@
-import { NgFor } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { delay } from 'rxjs';
+import { disableDebugTools } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-hello',
@@ -8,17 +7,19 @@ import { delay } from 'rxjs';
   styleUrls: ['./hello.component.css']
 })
 export class HelloComponent implements OnInit {
-  nazwa: string = "<podaj swoje imię>";
+  name: string = "<podaj swoje imię>";
   counter: number = 0;
+  deadline: Date = new Date();
   items = [
-    {id: 1, name: "Wynieść śmieci" },
-    {id: 2, name: "Pójść do sklepu" },
-    {id: 3, name: "Przygotować obiad" },
-    {id: 4, name: "Posprzątać" },
+    {id: 1, name: "Wynieść śmieci", priority: '', deadline: new Date() },
+    {id: 2, name: "Pójść do sklepu", priority: '', deadline: new Date() },
+    {id: 3, name: "Przygotować obiad", priority: '', deadline: new Date() },
+    {id: 4, name: "Posprzątać", priority: '', deadline: new Date() },
   ];
   lastId: number = this.items.length;
   todoItem: string = "";
   errorBoolean = false;
+  priority: string = '3';
 
   constructor() { }
 
@@ -48,7 +49,8 @@ export class HelloComponent implements OnInit {
     // else{
 
     //both solutions share this part
-      const item = { id: ++this.lastId, name: this.todoItem };
+      const item = { id: ++this.lastId, name: this.todoItem, priority: this.priority,
+        deadline: this.deadline };
       this.items.push(item);
       this.todoItem = "";
 

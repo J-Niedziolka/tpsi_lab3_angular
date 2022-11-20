@@ -1,6 +1,6 @@
 <h1>Hello works!</h1>
-<h1>Witaj, {{ nazwa }}. Stan licznika: {{ counter}} </h1>
-<input type="text" [(ngModel)]="nazwa">
+<h1>Witaj, {{ name }}. Stan licznika: {{ counter}} </h1>
+<input type="text" [(ngModel)]="name">
 
 <button (click)="incrementCounter()">+</button>
 <button (click)="decrementCounter()">-</button>
@@ -8,11 +8,23 @@
 <ul>
     <li *ngFor="let item of items">
         {{ item.id }} - {{ item.name }}
-        <button (click)="deleteItem(item.id)">X</button>
+        <button (click)="deleteItem(item.id)">X</button><br>
+        priorytet: {{item.priority}}, termin: {{item.deadline}}
     </li>
 </ul>
-<label for="addEl">Podaj czynność do wykonania:</label>
+<label for="addEl">Podaj czynność do wykonania: </label>
 <input name='addEl' type="text" [(ngModel)]="todoItem">
+<br>
+<label for="choosePriority">Wybierz priorytet zadania: </label>
+<select [(ngModel)]="priority" name="choosePriority">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+</select>
+<br>
+<label for="deadline">Podaj termin na wykonanie zadania: </label>
+<input name="deadline" type="date" [(ngModel)]="deadline">
+<br>
 <button (click)="addItem()">Dodaj</button>
 <!-- #2 solution -->
 <div id="error" *ngIf="errorBoolean">
